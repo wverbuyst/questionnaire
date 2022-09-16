@@ -1,43 +1,33 @@
-import { useCallback } from "react";
+// import { useCallback } from "react";
 
 import "survey-core/defaultV2.min.css";
 import { StylesManager, Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 
 import "./App.css";
+import { useAppState } from "./state";
 
 StylesManager.applyTheme("defaultV2");
 
-const surveyJson = {
-  elements: [
-    {
-      name: "FirstName",
-      title: "Enter your first name:",
-      type: "text",
-    },
-    {
-      name: "LastName",
-      title: "Enter your last name:",
-      type: "text",
-    },
-  ],
-};
-
 function App() {
-  const survey = new Model(surveyJson);
-  survey.focusFirstQuestionAutomatic = false;
+  const surveyJson = useAppState().questionnaire;
+  const survey = surveyJson && new Model(surveyJson);
+  // if (survey) {
+  //   survey.focusFirstQuestionAutomatic = false;
+  // }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const alertResults = useCallback((sender: { [key: string]: any }) => {
-    const results = JSON.stringify(sender.data);
-    alert(results);
-  }, []);
+  // // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // const results = useCallback((sender: { [key: string]: any }) => {
+  //   return JSON.stringify(sender.data);
+  // }, []);
 
-  survey.onComplete.add(alertResults);
+  // if (survey) {
+  //   survey.onComplete.add(console.log(results));
+  // }
 
   return (
     <div className="display">
-      <Survey model={survey} />
+      {survey ? <Survey model={survey} /> : <p>no questionnaire</p>}
     </div>
   );
 }

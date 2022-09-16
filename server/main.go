@@ -11,13 +11,13 @@ import (
 )
 
 type Element struct {
-	Name  string
-	Title string
-	Type  string
+	Name  string `json:"name"`
+	Title string `json:"title`
+	Type  string `json:"type"`
 }
 
 type Questionnaire struct {
-	Elements []Element
+	Elements []Element `json:"elements"`
 }
 
 func getQuestionnaire(context *gin.Context) {
