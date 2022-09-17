@@ -13,37 +13,24 @@
   "publisher": "Test Department of Health",
   "item": [
     {
-      "linkId": "birthDetails",
-      "text": "Birth details - To be completed by health professional",
-      "type": "group",
-      "item": [
+      "linkId": "nameOfChild",
+      "text": "Name of child",
+      "type": "string"
+    },
+    {
+      "linkId": "sex",
+      "text": "Sex",
+      "type": "choice",
+      "answerOption": [
         {
-          "linkId": "group",
-          "type": "group",
-          "item": [
-            {
-              "linkId": "nameOfChild",
-              "text": "Name of child",
-              "type": "string"
-            },
-            {
-              "linkId": "sex",
-              "text": "Sex",
-              "type": "choice",
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "code": "F"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "M"
-                  }
-                }
-              ]
-            }
-          ]
+          "valueCoding": {
+            "code": "F"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "M"
+          }
         }
       ]
     }
