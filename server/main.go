@@ -16,7 +16,6 @@ type Element struct {
 	Title         string   `json:"title"`
 	Type          string   `json:"type"`
 	Html          string   `json:"html"`
-	TitleLocation string   `json:"titleLocation"`
 	IsRequired    bool     `json:"isRequired"`
 	Choices       []string `json:"choices"`
 	CorrectAnswer string   `json:"correctAnswer"`
@@ -63,7 +62,14 @@ func getFHIRQuestionnaire(context *gin.Context) {
 		var e Element
 		e.Title = q.Text
 		e.Name = q.LinkId
-		e.Type = q.Type
+
+		if q.Type == "string" {
+			e.Type = "text"
+		}
+
+		if q.Type == "choice" {
+			e.Type = "radiogroup"
+		}
 
 		for _, o := range q.AnswerOption {
 			e.Choices = append(e.Choices, o.ValueCoding.Code)

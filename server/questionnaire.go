@@ -1,31 +1,31 @@
 package main
 
 type Questionnaire struct {
-	Id             string              `json:"id,omitempty"`
-	ResourceType   string              `json:"resourceType"`
-	ImplicitRules  string              `json:"implicitRules,omitempty"`
-	Language       string              `json:"language,omitempty"`
-	Url            string              `json:"url,omitempty"`
-	Version        string              `json:"version,omitempty"`
-	Name           string              `json:"name,omitempty"`
-	Title          string              `json:"title,omitempty"`
-	Date           string              `json:"date,omitempty"`
-	Publisher      string              `json:"publisher,omitempty"`
-	Description    string              `json:"description,omitempty"`
-	Purpose        string              `json:"purpose,omitempty"`
-	Copyright      string              `json:"copyright,omitempty"`
-	ApprovalDate   string              `json:"approvalDate,omitempty"`
-	LastReviewDate string              `json:"lastReviewDate,omitempty"`
-	Item           []QuestionnaireItem `json:"item,omitempty"`
+	Id             string `json:"id,omitempty"`
+	ResourceType   string `json:"resourceType,omitempty"`
+	ImplicitRules  string `json:"implicitRules,omitempty"`
+	Language       string `json:"language,omitempty"`
+	Url            string `json:"url,omitempty"`
+	Version        string `json:"version,omitempty"`
+	Name           string `json:"name,omitempty"`
+	Title          string `json:"title,omitempty"`
+	Date           string `json:"date,omitempty"`
+	Publisher      string `json:"publisher,omitempty"`
+	Description    string `json:"description,omitempty"`
+	Purpose        string `json:"purpose,omitempty"`
+	Copyright      string `json:"copyright,omitempty"`
+	ApprovalDate   string `json:"approvalDate,omitempty"`
+	LastReviewDate string `json:"lastReviewDate,omitempty"`
+	Item           []Item `json:"item,omitempty"`
 }
 
-type QuestionnaireItem struct {
+type Item struct {
 	Id             string         `json:"id,omitempty"`
-	LinkId         string         `json:"linkId"`
+	LinkId         string         `json:"linkId,omitempty"`
 	Definition     string         `json:"definition,omitempty"`
 	Prefix         string         `json:"prefix,omitempty"`
 	Text           string         `json:"text,omitempty"`
-	Type           string         `json:"type"`
+	Type           string         `json:"type,omitempty"`
 	Required       bool           `json:"required,omitempty"`
 	Repeats        bool           `json:"repeats,omitempty"`
 	ReadOnly       bool           `json:"readOnly,omitempty"`
@@ -35,9 +35,9 @@ type QuestionnaireItem struct {
 }
 
 type AnswerOption struct {
-	ValueCoding Code `bson:"valueCoding,omitempty" json:"valueCoding,omitempty"`
+	ValueCoding Code `json:"valueCoding,omitempty"`
 }
 
 type Code struct {
-	Code string `bson:"code,omitempty" json:"code,omitempty"`
+	Code string `json:"code,omitempty"`
 }

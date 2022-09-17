@@ -31,6 +31,16 @@
           "valueCoding": {
             "code": "M"
           }
+        },
+        {
+          "valueCoding": {
+            "code": "O"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "U"
+          }
         }
       ]
     }
