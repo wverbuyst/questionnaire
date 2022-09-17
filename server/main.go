@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -10,34 +9,6 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
-
-type Element struct {
-	Name          string   `json:"name"`
-	Title         string   `json:"title"`
-	Type          string   `json:"type"`
-	Html          string   `json:"html"`
-	IsRequired    bool     `json:"isRequired"`
-	Choices       []string `json:"choices"`
-	CorrectAnswer string   `json:"correctAnswer"`
-	ChoicesOrder  string   `json:"choicesOrder"`
-}
-
-type Elements struct {
-	Elements []Element `json:"elements"`
-}
-
-type SurveyJson struct {
-	Title string     `json:"title"`
-	Pages []Elements `json:"pages"`
-}
-
-func checkResourceType(r Questionnaire, rt string) {
-	if r.ResourceType != rt {
-		log.Fatal("Only FHIR Questionnaire resources are supported")
-
-	}
-	log.Println("ResourceType is Questionnaire")
-}
 
 func getFHIRQuestionnaire(context *gin.Context) {
 	content, err := ioutil.ReadFile("./example.json")
@@ -57,19 +28,15 @@ func getFHIRQuestionnaire(context *gin.Context) {
 	surveyJson.Title = payload.Title
 
 	for _, q := range payload.Item {
-
-		fmt.Println(q)
 		var e Element
 		e.Title = q.Text
 		e.Name = q.LinkId
 
-		if q.Type == "string" {
-			e.Type = "text"
+		t, err := getType(q.Type)
+		if err != nil {
+			log.Fatal("Error: ", err)
 		}
-
-		if q.Type == "choice" {
-			e.Type = "radiogroup"
-		}
+		e.Type = t
 
 		for _, o := range q.AnswerOption {
 			e.Choices = append(e.Choices, o.ValueCoding.Code)
