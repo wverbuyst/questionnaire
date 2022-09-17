@@ -8,36 +8,16 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/samply/golang-fhir-models/fhir-models/fhir"
 )
 
-type Element struct {
-	Name          string   `json:"name"`
-	Title         string   `json:"title"`
-	Type          string   `json:"type"`
-	Html          string   `json:"html"`
-	TitleLocation string   `json:"titleLocation"`
-	IsRequired    bool     `json:"isRequired"`
-	Choices       []string `json:"choices"`
-	CorrectAnswer string   `json:"correctAnswer"`
-	ChoicesOrder  string   `json:"choicesOrder"`
-}
-
-type Elements struct {
-	Elements []Element `json:"elements"`
-}
-
-type Questionnaire struct {
-	Title string     `json:"title"`
-	Pages []Elements `json:"pages"`
-}
-
-func getQuestionnaire(context *gin.Context) {
-	content, err := ioutil.ReadFile("./questionnaire.json")
+func getFHIRQuestionnaire(context *gin.Context) {
+	content, err := ioutil.ReadFile("./example.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
 	}
 
-	var payload Questionnaire
+	var payload fhir.Questionnaire
 	err = json.Unmarshal(content, &payload)
 	if err != nil {
 		log.Fatal("Error during Unmarshal(): ", err)
@@ -56,6 +36,7 @@ func main() {
 	router.Use(cors.Default())
 
 	router.GET("/", welcomeWorld)
-	router.GET("/questionnaire", getQuestionnaire)
+	// router.GET("/questionnaire", getQuestionnaire)
+	router.GET("/questionnaire", getFHIRQuestionnaire)
 	router.Run(":9090")
 }

@@ -1,0 +1,51 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "bb",
+  "text": {
+    "status": "generated",
+    "div": "<div><b>Birth details - To be completed by health professional</b></div>"
+  },
+  "title": "Test Health Record",
+  "status": "draft",
+  "experimental": true,
+  "subjectType": ["Patient"],
+  "date": "2013-02-19",
+  "publisher": "Test Department of Health",
+  "item": [
+    {
+      "linkId": "birthDetails",
+      "text": "Birth details - To be completed by health professional",
+      "type": "group",
+      "item": [
+        {
+          "linkId": "group",
+          "type": "group",
+          "item": [
+            {
+              "linkId": "nameOfChild",
+              "text": "Name of child",
+              "type": "string"
+            },
+            {
+              "linkId": "sex",
+              "text": "Sex",
+              "type": "choice",
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "code": "F"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "code": "M"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
