@@ -10,11 +10,11 @@ import { useAppState } from "./state";
 StylesManager.applyTheme("defaultV2");
 
 function App() {
-  const surveyJson = useAppState().questionnaire;
+  const { questionnaire, isLoading } = useAppState();
+  const surveyJson = questionnaire;
   const survey = surveyJson && new Model(surveyJson);
-  // if (survey) {
-  //   survey.focusFirstQuestionAutomatic = false;
-  // }
+
+  console.log("isLoading", isLoading);
 
   // // eslint-disable-next-line @typescript-eslint/no-explicit-any
   // const results = useCallback((sender: { [key: string]: any }) => {
@@ -27,7 +27,13 @@ function App() {
 
   return (
     <div className="display">
-      {survey ? <Survey model={survey} /> : <p>no questionnaire</p>}
+      {isLoading ? (
+        <p>...loading</p>
+      ) : survey ? (
+        <Survey model={survey} />
+      ) : (
+        <p>no questionnaire</p>
+      )}
     </div>
   );
 }

@@ -9,5 +9,6 @@ export interface Questionnaire {
 }
 
 export interface State {
+  isLoading: boolean;
   questionnaire: Questionnaire | null;
 }
