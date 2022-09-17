@@ -1,14 +1,64 @@
 {
-  "elements": [
+  "title": "Metallica",
+  "pages": [
     {
-      "name": "FirstName",
-      "title": "Enter your first name:",
-      "type": "text"
+      "elements": [
+        {
+          "type": "html",
+          "html": "You are about to start a quiz on Metallica. <br>You will have 10 seconds for every question and 25 seconds to end the quiz.<br>Enter your name below and click <b>Start Quiz</b> to begin."
+        },
+        {
+          "type": "text",
+          "name": "username",
+          "titleLocation": "hidden",
+          "isRequired": true
+        }
+      ]
     },
     {
-      "name": "LastName",
-      "title": "Enter your last name:",
-      "type": "text"
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "Kill 'Em All",
+          "title": "When was Kill 'Em All released?",
+          "choices": ["1796", "1810", "1983", "2001"],
+          "correctAnswer": "1983"
+        }
+      ]
+    },
+    {
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "drummer",
+          "title": "Whose is the drummer of Metallica?",
+          "choicesOrder": "random",
+          "choices": [
+            "James Hetfield",
+            "Kirk Hammett",
+            "Cliff Burton",
+            "Lars Ulrich"
+          ],
+          "correctAnswer": "Lars Ulrich"
+        }
+      ]
+    },
+    {
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "albums",
+          "title": "Which is not a Metallica album?",
+          "choicesOrder": "random",
+          "choices": [
+            "...And Justice for All",
+            "Master of Puppets",
+            "Sob Rock",
+            "Ride the Lightning"
+          ],
+          "correctAnswer": "Sob Rock"
+        }
+      ]
     }
   ]
 }

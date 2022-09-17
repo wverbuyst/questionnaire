@@ -4,8 +4,13 @@ export interface Element {
   type: string;
 }
 
+export interface Elements {
+  element: Element[];
+}
+
 export interface Questionnaire {
-  elements: Element[];
+  title: string;
+  pages: Elements;
 }
 
 export interface State {
