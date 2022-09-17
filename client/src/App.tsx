@@ -1,13 +1,12 @@
 // import { useCallback } from "react";
 
-import "survey-core/defaultV2.min.css";
+import "survey-core/modern.min.css";
 import { StylesManager, Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 
-import "./App.css";
 import { useAppState } from "./state";
 
-StylesManager.applyTheme("defaultV2");
+StylesManager.applyTheme("modern");
 
 function App() {
   const { questionnaire, isLoading } = useAppState();
@@ -26,7 +25,7 @@ function App() {
   // }
 
   return (
-    <div className="display">
+    <div>
       {isLoading ? (
         <p>...loading</p>
       ) : survey ? (
