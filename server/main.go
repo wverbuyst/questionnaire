@@ -32,27 +32,16 @@ func getFHIRQuestionnaire(context *gin.Context) {
 	surveyJson.Pages = append(surveyJson.Pages, html)
 
 	for _, i := range payload.Item {
-		var e Element
 		var es Elements
 
-		e.Title = i.Text
-		e.Name = i.LinkId
+		processItems(i, &es)
 
-		t, err := getType(i.Type)
-		if err != nil {
-			log.Fatal("Error: ", err)
-		}
-		e.Type = t
-
-		for _, o := range i.AnswerOption {
-			e.Choices = append(e.Choices, o.ValueCoding.Code)
+		if len(i.Item) > 0 {
+			for _, i := range i.Item {
+				processItems(i, &es)
+			}
 		}
 
-		es.Elements = append(es.Elements, e)
-
-		processNestedItems(i, &es)
-
-		log.Println("M", es)
 		surveyJson.Pages = append(surveyJson.Pages, es)
 	}
 
