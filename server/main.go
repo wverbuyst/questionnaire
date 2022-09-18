@@ -58,5 +58,9 @@ func main() {
 
 	router.GET("/", welcomeWorld)
 	router.GET("/questionnaire", getFHIRQuestionnaire)
-	router.Run(":9090")
+	err := router.Run(":9090")
+
+	if err != nil {
+		log.Fatal("Error when running server: ", err)
+	}
 }
