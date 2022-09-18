@@ -17,5 +17,8 @@ If you haven't already, install go
 
 > yarn dev
 
-![](./img/screenshot_1.png)
-![](./img/screenshot_2.png)
+![](./img/screenshot1.png)
+![](./img/screenshot2.png)
+![](./img/screenshot3.png)
+![](./img/screenshot4.png)
+![](./img/screenshot5.png)
