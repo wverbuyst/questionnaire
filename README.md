@@ -1,3 +1,5 @@
+[![Client - lint & type check](https://github.com/wverbuyst/questionnaire/actions/workflows/client-lint-typecheck.yml/badge.svg)](https://github.com/wverbuyst/questionnaire/actions/workflows/client-lint-typecheck.yml) [![Server - build & lint](https://github.com/wverbuyst/questionnaire/actions/workflows/server-lint.yml/badge.svg)](https://github.com/wverbuyst/questionnaire/actions/workflows/server-lint.yml)
+
 ## What is this?
 
 WIP
