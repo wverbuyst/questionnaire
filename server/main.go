@@ -11,7 +11,7 @@ import (
 )
 
 func getFHIRQuestionnaire(context *gin.Context) {
-	content, err := ioutil.ReadFile("./example_2.json")
+	content, err := ioutil.ReadFile("./example.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
 	}
