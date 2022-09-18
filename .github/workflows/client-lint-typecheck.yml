@@ -1,4 +1,4 @@
-name: Client - lint and TypeCheck
+name: Client - lint & type check
 
 on: [push, pull_request]
 

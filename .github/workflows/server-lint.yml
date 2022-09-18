@@ -16,6 +16,7 @@ jobs:
           go version
       - name: Run build
         run: go build .
+        working-directory: server
   lint:
     strategy:
       matrix:
@@ -32,3 +33,4 @@ jobs:
         uses: golangci/golangci-lint-action@v3
         with:
           version: v1.49
+        working-directory: server
