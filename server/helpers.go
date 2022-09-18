@@ -49,7 +49,7 @@ func getType(t string) (string, error) {
 	case "url":
 		return "text", nil
 	default:
-		return "", errors.New("Unhandled value[x] in answerOption")
+		return "", errors.New("unhandled value[x] in answerOption")
 	}
 }
 
