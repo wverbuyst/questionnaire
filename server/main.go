@@ -11,7 +11,7 @@ import (
 )
 
 func getFHIRQuestionnaire(context *gin.Context) {
-	content, err := ioutil.ReadFile("./example.json")
+	content, err := ioutil.ReadFile("./example_2.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
 	}
@@ -25,7 +25,11 @@ func getFHIRQuestionnaire(context *gin.Context) {
 	checkResourceType(payload, "Questionnaire")
 
 	var surveyJson SurveyJson
+
 	surveyJson.Title = payload.Title
+
+	html := getTextForHtml(payload)
+	surveyJson.Pages = append(surveyJson.Pages, html)
 
 	for _, q := range payload.Item {
 		var e Element
