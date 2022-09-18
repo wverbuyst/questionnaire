@@ -31,23 +31,28 @@ func getFHIRQuestionnaire(context *gin.Context) {
 	html := getTextForHtml(payload)
 	surveyJson.Pages = append(surveyJson.Pages, html)
 
-	for _, q := range payload.Item {
+	for _, i := range payload.Item {
 		var e Element
-		e.Title = q.Text
-		e.Name = q.LinkId
+		var es Elements
 
-		t, err := getType(q.Type)
+		e.Title = i.Text
+		e.Name = i.LinkId
+
+		t, err := getType(i.Type)
 		if err != nil {
 			log.Fatal("Error: ", err)
 		}
 		e.Type = t
 
-		for _, o := range q.AnswerOption {
+		for _, o := range i.AnswerOption {
 			e.Choices = append(e.Choices, o.ValueCoding.Code)
 		}
 
-		var es Elements
 		es.Elements = append(es.Elements, e)
+
+		processNestedItems(i, &es)
+
+		log.Println("M", es)
 		surveyJson.Pages = append(surveyJson.Pages, es)
 	}
 

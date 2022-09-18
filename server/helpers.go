@@ -52,3 +52,27 @@ func getType(t string) (string, error) {
 		return "", errors.New("Unhandled value[x] in answerOption")
 	}
 }
+
+func processNestedItems(item Item, es *Elements) {
+	if len(item.Item) > 0 {
+		for _, i := range item.Item {
+			var e Element
+
+			e.Title = i.Text
+			e.Name = i.LinkId
+
+			t, err := getType(i.Type)
+			if err != nil {
+				log.Fatal("Error: ", err)
+			}
+			e.Type = t
+
+			for _, o := range i.AnswerOption {
+				e.Choices = append(e.Choices, o.ValueCoding.Code)
+			}
+
+			es.Elements = append(es.Elements, e)
+			log.Println("P", es)
+		}
+	}
+}

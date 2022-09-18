@@ -2,15 +2,16 @@ export interface Element {
   name: string
   title: string
   type: string
-}
-
-export interface Elements {
-  element: Element[]
+  html?: string
+  isRequired?: boolean
+  choices?: string[] | null
+  correctAnswer?: string
+  choicesOrder?: string
 }
 
 export interface Questionnaire {
   title: string
-  pages: Elements
+  pages: { elements: Element[] }[]
 }
 
 export interface State {

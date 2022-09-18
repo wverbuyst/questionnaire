@@ -34,6 +34,7 @@ type Item struct {
 	MaxLength      int            `json:"maxLength,omitempty"`
 	AnswerValueSet string         `json:"answerValueSet,omitempty"`
 	AnswerOption   []AnswerOption `json:"answerOption,omitempty"`
+	Item           []Item         `json:"item,omitempty"`
 }
 
 type AnswerOption struct {
