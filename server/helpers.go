@@ -65,8 +65,14 @@ func processItems(i Item, es *Elements) {
 	}
 	e.Type = t
 
-	for _, o := range i.AnswerOption {
-		e.Choices = append(e.Choices, o.ValueCoding.Code)
+	// for _, o := range i.AnswerOption {
+	// 	e.Choices = append(e.Choices, o.ValueCoding.Code)
+	// }
+	if i.AnswerOption != nil {
+		e.ChoicesByUrl = ChoicesByUrl{
+			Url:       "http://localhost:9090/gender-options",
+			ValueName: "display",
+		}
 	}
 
 	es.Elements = append(es.Elements, e)

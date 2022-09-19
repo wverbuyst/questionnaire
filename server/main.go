@@ -52,11 +52,26 @@ func welcomeWorld(context *gin.Context) {
 	context.IndentedJSON(http.StatusOK, gin.H{"message": "hello world"})
 }
 
+func getGenderOptions(context *gin.Context) {
+	content, err := ioutil.ReadFile("./genderOptions.json")
+	if err != nil {
+		log.Fatal("Error when opening file: ", err)
+	}
+
+	var payload []GenderOption
+	err = json.Unmarshal(content, &payload)
+	if err != nil {
+		log.Fatal("Error during Unmarshal(): ", err)
+	}
+	context.IndentedJSON(http.StatusOK, payload)
+}
+
 func main() {
 	router := gin.Default()
 	router.Use(cors.Default())
 
 	router.GET("/", welcomeWorld)
+	router.GET("/gender-options", getGenderOptions)
 	router.GET("/questionnaire", getFHIRQuestionnaire)
 	err := router.Run(":9090")
 
