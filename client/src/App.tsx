@@ -10,17 +10,11 @@ import { useAppState } from './state'
 StylesManager.applyTheme('defaultV2')
 
 function App() {
-  const { questionnaire, isLoading } = useAppState()
+  const { countries, questionnaire, isLoading } = useAppState()
   const surveyJson = questionnaire
   const survey = surveyJson && new Model(surveyJson)
 
-  // const results = useCallback((sender: { [key: string]: any }) => {
-  //   return JSON.stringify(sender.data);
-  // }, []);
-
-  // if (survey) {
-  //   survey.onComplete.add(console.log(results));
-  // }
+  survey?.setVariable('countries', countries)
 
   return isLoading ? (
     <p>...loading</p>

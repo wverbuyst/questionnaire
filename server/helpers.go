@@ -75,6 +75,10 @@ func processItems(i Item, es *Elements) {
 		}
 	}
 
+	if i.AnswerValueSet == "http://hl7.org/fhir/ValueSet/country" {
+		e.Choices = append(e.Choices, "{countries}")
+	}
+
 	es.Elements = append(es.Elements, e)
 
 }

@@ -1,3 +1,13 @@
+export interface Country {
+  name: string
+  officialName: string
+  regio: string
+  cca2: string
+  ccn3: string
+  cca3: string
+  cioc: string
+}
+
 export interface Element {
   name: string
   title: string
@@ -15,6 +25,7 @@ export interface Questionnaire {
 }
 
 export interface State {
+  countries: string[] | null
   isLoading: boolean
   questionnaire: Questionnaire | null
 }
