@@ -4,6 +4,17 @@ type ChoicesByUrl struct {
 	Url       string `json:"url"`
 	ValueName string `json:"valueName"`
 }
+
+type Country struct {
+	Name         string `json:"name"`
+	OfficialName string `json:"officialName"`
+	Region       string `json:"region"`
+	CCA2         string `json:"cca2"`
+	CCN3         string `json:"ccn3"`
+	CCA3         string `json:"cca3"`
+	CIOC         string `json:"cioc"`
+}
+
 type Element struct {
 	Name          string       `json:"name"`
 	Title         string       `json:"title"`
