@@ -65,9 +65,6 @@ func processItems(i Item, es *Elements) {
 	}
 	e.Type = t
 
-	// for _, o := range i.AnswerOption {
-	// 	e.Choices = append(e.Choices, o.ValueCoding.Code)
-	// }
 	if i.AnswerOption != nil {
 		e.ChoicesByUrl = ChoicesByUrl{
 			Url:       "http://localhost:9090/gender-options",
@@ -76,7 +73,7 @@ func processItems(i Item, es *Elements) {
 	}
 
 	if i.AnswerValueSet == "http://hl7.org/fhir/ValueSet/country" {
-		e.Choices = append(e.Choices, "{countries}")
+		e.Type = "dropdown"
 	}
 
 	es.Elements = append(es.Elements, e)

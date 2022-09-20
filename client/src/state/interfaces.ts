@@ -28,4 +28,5 @@ export interface State {
   countries: string[] | null
   isLoading: boolean
   questionnaire: Questionnaire | null
+  user: string
 }

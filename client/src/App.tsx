@@ -1,5 +1,3 @@
-// import { useCallback } from "react";
-
 import 'survey-core/defaultV2.min.css'
 
 import { Model, StylesManager } from 'survey-core'
@@ -10,11 +8,13 @@ import { useAppState } from './state'
 StylesManager.applyTheme('defaultV2')
 
 function App() {
-  const { countries, questionnaire, isLoading } = useAppState()
+  const { countries, questionnaire, isLoading, user } = useAppState()
   const surveyJson = questionnaire
   const survey = surveyJson && new Model(surveyJson)
 
-  survey?.setVariable('countries', countries)
+  survey?.setVariable('user', user)
+  const question = survey?.getQuestionByName('2.3')
+  question?.setPropertyValue('choices', countries)
 
   return isLoading ? (
     <p>...loading</p>
