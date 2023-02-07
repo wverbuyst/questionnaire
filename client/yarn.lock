@@ -2301,10 +2301,10 @@ survey-core@*:
   resolved "https://registry.yarnpkg.com/survey-core/-/survey-core-1.9.49.tgz#765dff3afb05df11b9e16d0e17517b9753309e00"
   integrity sha512-BBo9HpQkgn1MYx0AtVqX5VM3A+1A2cRSeVdwSjMWtKcaA8dVgKGqCavbEteQnz60BdP5DZ2qi4UKyGhcwqRwuA==
 
-survey-react-ui@^1.9.49:
-  version "1.9.49"
-  resolved "https://registry.yarnpkg.com/survey-react-ui/-/survey-react-ui-1.9.49.tgz#2e5eaff8f09a7e6b7c06fd99d20a14767213c48f"
-  integrity sha512-tCRNJLK7MCS5KO/x5nXD0EzbA12/iS1oaeUVt578K1fyBvqktWdRubhqONYCnL4vHeH7OHnp2sc7qdRGb3rfTg==
+survey-react-ui@^1.9.71:
+  version "1.9.71"
+  resolved "https://registry.yarnpkg.com/survey-react-ui/-/survey-react-ui-1.9.71.tgz#63a2f5114b4cbbace5e9640ceacdd73190cc6166"
+  integrity sha512-VmGNIKYXliTl7ob2yQOtnkNpOa8opHIlMmHXNKAttdCKqsL3NanN3rLJRcyxOzLRNKkBq++QDyRnDzt2f7lnSg==
   dependencies:
     react "^16.5.0 || ^17.0.1 || ^18.1.0"
     react-dom "^16.5.0 || ^17.0.1 || ^18.1.0"
