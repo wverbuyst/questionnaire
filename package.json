@@ -7,6 +7,6 @@
     "dev": "cd ./client && yarn dev"
   },
   "devDependencies": {
-    "git-commit-msg-linter": "^4.5.0"
+    "git-commit-msg-linter": "^4.7.4"
   }
 }
