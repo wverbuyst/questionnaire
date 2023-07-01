@@ -16,7 +16,7 @@
     "overmind-react": "^29.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "survey-react-ui": "^1.9.71",
+    "survey-react-ui": "^1.9.95",
     "vite-plugin-eslint": "^1.8.1"
   },
   "devDependencies": {

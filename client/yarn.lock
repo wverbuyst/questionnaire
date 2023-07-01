@@ -2608,19 +2608,19 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-survey-core@*:
-  version "1.9.49"
-  resolved "https://registry.yarnpkg.com/survey-core/-/survey-core-1.9.49.tgz#765dff3afb05df11b9e16d0e17517b9753309e00"
-  integrity sha512-BBo9HpQkgn1MYx0AtVqX5VM3A+1A2cRSeVdwSjMWtKcaA8dVgKGqCavbEteQnz60BdP5DZ2qi4UKyGhcwqRwuA==
+survey-core@1.9.95:
+  version "1.9.95"
+  resolved "https://registry.yarnpkg.com/survey-core/-/survey-core-1.9.95.tgz#d7503f6fc2a847aacf839f3544a2ac2ddb1c799a"
+  integrity sha512-olOqxAfKlCw9EOAvVb8iJ9zDYBylv7DN4g8E3ir8pdDGvnOWwr+d/HVvxRdyl9kPVMjvikWQUSzrBTDVLkh3gw==
 
-survey-react-ui@^1.9.71:
-  version "1.9.71"
-  resolved "https://registry.yarnpkg.com/survey-react-ui/-/survey-react-ui-1.9.71.tgz#63a2f5114b4cbbace5e9640ceacdd73190cc6166"
-  integrity sha512-VmGNIKYXliTl7ob2yQOtnkNpOa8opHIlMmHXNKAttdCKqsL3NanN3rLJRcyxOzLRNKkBq++QDyRnDzt2f7lnSg==
+survey-react-ui@^1.9.95:
+  version "1.9.95"
+  resolved "https://registry.yarnpkg.com/survey-react-ui/-/survey-react-ui-1.9.95.tgz#88c4c0bca86ed3c27495cd9a3041b198b8bf8651"
+  integrity sha512-Q/zF8TjbKDsuxXF8WPxWGVoS8nuQMFcDDNzWhPSAJ4K2wvL/l2a43mdd7+90KvKvqjRlwwZFioe0NRZ2XML3QA==
   dependencies:
     react "^16.5.0 || ^17.0.1 || ^18.1.0"
     react-dom "^16.5.0 || ^17.0.1 || ^18.1.0"
-    survey-core "*"
+    survey-core "1.9.95"
 
 text-table@^0.2.0:
   version "0.2.0"
