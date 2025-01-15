@@ -1,8 +1,6 @@
-import "survey-core/defaultV2.min.css";
-
 import { Model, StylesManager } from "survey-core";
+import "survey-core/defaultV2.min.css";
 import { Survey } from "survey-react-ui";
-
 import { useAppState } from "./state";
 
 StylesManager.applyTheme("defaultV2");

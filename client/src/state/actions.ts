@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { Context } from ".";
 
 export const onInitializeOvermind = async ({
