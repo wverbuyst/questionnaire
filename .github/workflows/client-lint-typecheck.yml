@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        nodejs: [14, 16]
+        nodejs: [20, 22]
         os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
       - name: Checkout repo
@@ -22,6 +22,9 @@ jobs:
         working-directory: client
       - name: Lint
         run: npm run lint
+        working-directory: client
+      - name: Format
+        run: npm run format:check
         working-directory: client
       - name: TypeCheck
         run: npm run type-check
