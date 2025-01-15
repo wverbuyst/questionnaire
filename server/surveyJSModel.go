@@ -32,8 +32,8 @@ type Elements struct {
 }
 
 type GenderOption struct {
-	Code   string `json:"code"`
-	Diplay string `json:"display"`
+	Code    string `json:"code"`
+	Display string `json:"display"`
 }
 
 type SurveyJson struct {
