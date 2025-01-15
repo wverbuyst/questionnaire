@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "format:check": "prettier --check ./src",
     "preview": "vite preview",
     "lint": "eslint ./src --ext .jsx,.js,.ts,.tsx",
     "type-check": "tsc"
@@ -33,7 +34,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "prettier": "^2.7.1",
+    "prettier": "^3.4.2",
     "typescript": "5.7.3",
     "vite": "^6.0.7"
   }
