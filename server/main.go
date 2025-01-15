@@ -2,16 +2,16 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func getFHIRQuestionnaire(context *gin.Context) {
-	content, err := ioutil.ReadFile("./example.json")
+	content, err := os.ReadFile("./example.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
 	}
@@ -53,7 +53,7 @@ func welcomeWorld(context *gin.Context) {
 }
 
 func getGenderOptions(context *gin.Context) {
-	content, err := ioutil.ReadFile("./genderOptions.json")
+	content, err := os.ReadFile("./genderOptions.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
 	}
@@ -67,7 +67,7 @@ func getGenderOptions(context *gin.Context) {
 }
 
 func getCountries(context *gin.Context) {
-	content, err := ioutil.ReadFile("./countries.json")
+	content, err := os.ReadFile("./countries.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
 	}
