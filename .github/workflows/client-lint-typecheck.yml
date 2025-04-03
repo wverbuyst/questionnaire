@@ -10,16 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix:
-        nodejs: 22
-        os: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Set up environment
         uses: actions/setup-node@v2-beta
-        with:
-          node-version: ${{ matrix.nodejs }}
       - name: Install dependencies
         run: npm install
         working-directory: client
