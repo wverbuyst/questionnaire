@@ -4,7 +4,7 @@ updates:
     package-ecosystem: "npm"
     schedule:
       interval: "monthly"
-      time: "04:00"
+      time: "02:00"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
@@ -12,7 +12,14 @@ updates:
     package-ecosystem: "npm"
     schedule:
       interval: "monthly"
-      time: "04:00"
+      time: "02:00"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
+  - directory: "/"
+    package-ecosystem: "github-actions"
+    schedule:
+      interval: "monthly"
+      time: "02:00"
+
+
